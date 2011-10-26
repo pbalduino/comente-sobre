@@ -1,8 +1,8 @@
 <html>
 <head>
-	<title>VRaptor Scaffold Project</title>
+<title>VRaptor Scaffold Project</title>
 </head>
 <body>
-	It works!!
+It works!!
 </body>
 </html>
