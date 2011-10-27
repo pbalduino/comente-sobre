@@ -17,8 +17,43 @@ public class Subject {
 		return id;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@Override
+	public String toString(){
+		return id + " - " + name;		
+	}
+	
+	@Override
+	public int hashCode(){
+		return (int) (name.hashCode() + id);
+		
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if (obj == null) {
+			return false;
+		}
+		if (this == obj) {
+			return true;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final Subject other = (Subject) obj;
+		return (id == other.id && name.equals(other.name));		
+	}
+
+	public String getName() {
+		return name;
+	}
+
 
 }

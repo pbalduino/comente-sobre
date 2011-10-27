@@ -1,3 +1,7 @@
-@CHARSET "UTF-8"; 
+@CHARSET "UTF-8";
 
-@IMPORT url("scaffold.css");
+body {
+	margin 0 auto;
+	font-family: helvetica, tahoma, arial, sans-serif;
+	
+}
