@@ -1,6 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
 <head>
-<title>VRaptor Scaffold Project</title>
+  <meta charset="utf-8" />
+<head>
+<title>Comente sobre</title>
 </head>
 <body>
 It works!!
