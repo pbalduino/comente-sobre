@@ -1,4 +1,4 @@
-package br.eti.balduino.models;
+package br.eti.balduino.comente.models;
 
 import org.junit.Test;
 

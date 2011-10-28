@@ -1,4 +1,4 @@
-package br.eti.balduino.repositories;
+package br.eti.balduino.comente.repositories;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

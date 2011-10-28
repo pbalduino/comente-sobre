@@ -1,4 +1,4 @@
-package br.eti.balduino.models;
+package br.eti.balduino.comente.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

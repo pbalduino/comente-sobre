@@ -1,4 +1,4 @@
-package br.eti.balduino.models;
+package br.eti.balduino.comente.models;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
