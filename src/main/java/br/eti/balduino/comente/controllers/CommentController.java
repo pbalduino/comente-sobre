@@ -16,12 +16,18 @@ public class CommentController {
 	
 	@Get("/")
 	public void index(){
-		System.out.println("--------------------> ");
+		//
+	}
+	
+	@Get("/{subject}")
+	public void showWhatever(String subject){
+		result.include("subject", subject);
+		result.include("notice", subject);
+		result.redirectTo(CommentController.class).index();
 	}
 
 	@Post("/new")
 	public void newComment(final Comment comment) {
-		System.out.println("--------------------Post> " + comment);
 		result.include("subject", comment == null ? "<null>" : comment.getSubject());
 		result.include("notice", "funcionou");
 		result.redirectTo(CommentController.class).index();
