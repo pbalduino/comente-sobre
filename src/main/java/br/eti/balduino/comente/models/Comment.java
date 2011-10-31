@@ -10,7 +10,7 @@ public class Comment {
 
 	private long id;
 	private String subject;
-	private String content; 
+	private String content;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,33 +22,8 @@ public class Comment {
 		this.id = id;
 	}
 
-	public void setSubject(String name) {
-		this.subject = name;
-	}
-	
-	@Override
-	public String toString(){
-		return id + " - " + subject + " - " + content;
-	}
-	
-	@Override
-	public int hashCode(){
-		return toString().hashCode();
-	}
-	
-	@Override
-	public boolean equals(Object obj){
-		if (obj == null) {
-			return false;
-		}
-		if (this == obj) {
-			return true;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		final Comment other = (Comment) obj;
-		return (hashCode() == other.hashCode() && id == other.id && subject.equals(other.subject));		
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 
 	public String getSubject() {
@@ -63,5 +38,29 @@ public class Comment {
 		this.content = content;
 	}
 
+	@Override
+	public String toString() {
+		return getId() + " - " + getSubject() + " - " + getContent();
+	}
 
+	@Override
+	public int hashCode() {
+		return toString().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (this == obj) {
+			return true;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final Comment other = (Comment) obj;
+		return (hashCode() == other.hashCode() && getId() == other.getId() && getSubject()
+				.equals(other.getSubject()));
+	}
 }

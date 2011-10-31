@@ -37,6 +37,17 @@ public class CommentTest {
 		anotherComment.setSubject("mimimi");
 		assertThat(comment, is(not(anotherComment)));
 	}
+	
+	@Test
+	public void instancesWithDifferentContentShouldNotBeEquals() {
+		comment.setContent("fffuuuuuuu");
+		comment.setId(122);
+		
+		Comment anotherComment = new Comment();
+		anotherComment.setId(123);
+		anotherComment.setContent("meh");
+		assertThat(comment, is(not(anotherComment)));
+	}
 
 	@Test
 	public void instancesWithDifferentNameShouldNotBeEquals() {
@@ -47,5 +58,20 @@ public class CommentTest {
 		anotherComment.setId(122);
 		anotherComment.setSubject("bar");
 		assertThat(comment, is(not(anotherComment)));
+	}
+	
+	@Test
+	public void cannotBeEqualsNull(){
+		assertThat(comment.equals(null), is(false));
+	}
+	
+	@Test
+	public void cannotBeEqualsAnObjectOfDifferentType(){
+		assertThat(comment.equals(""), is(false));
+	}
+	
+	@Test
+	public void shouldBeEqualsItself(){
+		assertThat(comment.equals(comment), is(true));
 	}
 }

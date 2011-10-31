@@ -20,17 +20,14 @@ public class CommentController {
 	}
 	
 	@Get("/{subject}")
-	public void showWhatever(String subject){
+	public void content(String subject){
 		result.include("subject", subject);
-		result.include("notice", subject);
-		result.redirectTo(CommentController.class).index();
 	}
 
-	@Post("/new")
-	public void newComment(final Comment comment) {
-		result.include("subject", comment == null ? "<null>" : comment.getSubject());
-		result.include("notice", "funcionou");
-		result.redirectTo(CommentController.class).index();
+	@Post("/what")
+	public void subject(final String subject) {
+		result.include("notice", "Quero comentar sobre " + subject);
+		result.redirectTo(CommentController.class).content(subject);
 	}
 }
 	
