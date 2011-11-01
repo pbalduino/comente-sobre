@@ -12,11 +12,13 @@ public class CommentControllerTest {
 	@Before
 	public void setUp(){
 		MockResult result = new MockResult();
-		commentController = new CommentController(result);
+		commentController = new CommentController(null, result);
 	}
 	
 	@Test
 	public void meh(){
-		
+		commentController.content("foo");
+		commentController.subject("foo");
+		commentController.index();
 	}
 }

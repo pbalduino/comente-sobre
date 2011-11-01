@@ -152,4 +152,11 @@
 			</plugin>
 		</plugins>
 	</reporting>
+	<organization>
+		<name>Plínio Balduino</name>
+	</organization>
+	<scm>
+		<url>https://github.com/pbalduino/comente-sobre</url>
+	</scm>
+	<url>https://github.com/pbalduino/comente-sobre</url>
 </project>
