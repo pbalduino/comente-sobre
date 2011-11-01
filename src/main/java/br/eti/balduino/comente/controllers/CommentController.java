@@ -16,14 +16,14 @@ public class CommentController {
 
 	public CommentController(CommentDao dao, Result result) {
 		this.dao = dao;
-		this.result = result;	
+		this.result = result;
 	}
-	
+
 	@Get("/")
-	public void index(){
+	public void index() {
 		//
 	}
-	
+
 	@Get("/{subject}")
 	public void content(String subject) {
 		result.include("subject", subject);
@@ -34,14 +34,13 @@ public class CommentController {
 		result.include("notice", "Quero comentar sobre " + subject);
 		result.redirectTo(CommentController.class).content(subject);
 	}
-	
+
 	@Post("/save")
-	public List<Comment> save(Comment comment){
+	public List<Comment> save(Comment comment) {
 		System.out.println("..........saving");
 		dao.save(comment);
 		System.out.println("..........saved");
-		
-		return dao.listAll();		
+
+		return dao.listAll();
 	}
 }
-	

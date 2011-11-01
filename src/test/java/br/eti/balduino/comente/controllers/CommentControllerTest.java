@@ -4,21 +4,23 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.caelum.vraptor.util.test.MockResult;
+import br.eti.balduino.comente.models.Comment;
 
 public class CommentControllerTest {
 
 	private CommentController commentController;
 
 	@Before
-	public void setUp(){
+	public void setUp() {
 		MockResult result = new MockResult();
 		commentController = new CommentController(null, result);
 	}
-	
+
 	@Test
-	public void meh(){
+	public void meh() {
 		commentController.content("foo");
 		commentController.subject("foo");
 		commentController.index();
+		commentController.save(new Comment());
 	}
 }

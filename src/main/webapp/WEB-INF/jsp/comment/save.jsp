@@ -4,4 +4,5 @@
 			<li>${comment.subject} - ${comment.email}</li>
 		</c:forEach>
 	</ul>
+	<a href="/">Voltar</a>
 </body>
