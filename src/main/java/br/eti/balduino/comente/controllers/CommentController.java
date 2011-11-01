@@ -5,12 +5,15 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.eti.balduino.comente.models.Comment;
+import br.eti.balduino.comente.repositories.CommentDao;
 
 @Resource
 public class CommentController {
 	private Result result;
+	private CommentDao dao;
 
-	public CommentController(Result result) {
+	public CommentController(CommentDao dao, Result result) {
+		this.dao = dao;
 		this.result = result;	
 	}
 	
@@ -20,7 +23,7 @@ public class CommentController {
 	}
 	
 	@Get("/{subject}")
-	public void content(String subject){
+	public void content(String subject) {
 		result.include("subject", subject);
 	}
 
@@ -28,6 +31,13 @@ public class CommentController {
 	public void subject(final String subject) {
 		result.include("notice", "Quero comentar sobre " + subject);
 		result.redirectTo(CommentController.class).content(subject);
+	}
+	
+	@Post("/save")
+	public void save(Comment comment){
+		System.out.println("..........saving");
+		dao.save(comment);
+		System.out.println("..........saved");
 	}
 }
 	
