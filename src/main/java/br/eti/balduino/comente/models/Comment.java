@@ -4,15 +4,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Comment {
 
-	private long id;
-	private String subject;
-	private String content;
-
 	@Id
 	@GeneratedValue
+	private long id;
+
+	@NotEmpty
+	private String subject;
+	
+	@NotEmpty
+	private String content;
+	
+	@NotEmpty
+	@Email
+	private String email;
+
 	public long getId() {
 		return id;
 	}
@@ -37,9 +48,18 @@ public class Comment {
 		this.content = content;
 	}
 
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
 	@Override
 	public String toString() {
-		return getId() + " - " + getSubject() + " - " + getContent();
+		return getId() + " - " + getEmail() + " - " + getSubject() + " - "
+				+ getContent();
 	}
 
 	@Override
@@ -59,7 +79,8 @@ public class Comment {
 			return false;
 		}
 		final Comment other = (Comment) obj;
-		return (hashCode() == other.hashCode() && getId() == other.getId() && getSubject()
-				.equals(other.getSubject()));
+		return (hashCode() == other.hashCode() && getId() == other.getId()
+				&& getSubject().equals(other.getSubject()) && getEmail()
+				.equals(other.getEmail()));
 	}
 }

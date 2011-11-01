@@ -1,5 +1,7 @@
 package br.eti.balduino.comente.controllers;
 
+import java.util.List;
+
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
@@ -34,10 +36,12 @@ public class CommentController {
 	}
 	
 	@Post("/save")
-	public void save(Comment comment){
+	public List<Comment> save(Comment comment){
 		System.out.println("..........saving");
 		dao.save(comment);
 		System.out.println("..........saved");
+		
+		return dao.listAll();		
 	}
 }
 	

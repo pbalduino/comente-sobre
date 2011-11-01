@@ -1,14 +1,14 @@
 package br.eti.balduino.comente.repositories;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.caelum.vraptor.ioc.Component;
-import br.com.caelum.vraptor.ioc.SessionScoped;
 import br.eti.balduino.comente.models.Comment;
 
 @Component
-@SessionScoped
 public class CommentDao {
 
 	private Session session;
@@ -18,8 +18,15 @@ public class CommentDao {
 	}
 
 	public void save(Comment comment) {
-//		Transaction tx = session.beginTransaction();
+		System.out.println("....before save: " + comment.getId());
 		session.save(comment);
-//		tx.commit();
+		System.out.println("....after save : " + comment.getId());
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Comment> listAll() {
+		List<Comment> list = session.createQuery("from Comment").list();
+		System.out.println("...Itens: " + list.size());
+		return list;
 	}
 }
