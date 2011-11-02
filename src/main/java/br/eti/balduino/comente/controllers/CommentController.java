@@ -35,7 +35,7 @@ public class CommentController {
 		result.redirectTo(CommentController.class).content(subject);
 	}
 
-	@Post("/save")
+	@Post("/list")
 	public List<Comment> save(Comment comment) {
 		System.out.println("..........saving");
 		dao.save(comment);

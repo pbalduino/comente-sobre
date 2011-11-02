@@ -1,9 +1,9 @@
 package br.eti.balduino.comente.repositories;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.eti.balduino.comente.models.Comment;
@@ -18,15 +18,12 @@ public class CommentDao {
 	}
 
 	public void save(Comment comment) {
-		System.out.println("....before save: " + comment.getId());
+		comment.setPosted(new Date());
 		session.save(comment);
-		System.out.println("....after save : " + comment.getId());
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Comment> listAll() {
-		List<Comment> list = session.createQuery("from Comment").list();
-		System.out.println("...Itens: " + list.size());
-		return list;
+		return session.createQuery("from Comment").list();
 	}
 }

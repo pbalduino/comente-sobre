@@ -1,9 +1,13 @@
 package br.eti.balduino.comente.models;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -14,15 +18,19 @@ public class Comment {
 	@GeneratedValue
 	private long id;
 
-	@NotEmpty
+	@NotEmpty(message = "Informe o assunto")
 	private String subject;
-	
-	@NotEmpty
+
+	@NotEmpty(message = "Você precisa escrever seu comentário")
+	@Type(type = "text")
 	private String content;
-	
-	@NotEmpty
-	@Email
+
+	@NotEmpty(message = "Informe o email")
+	@Email(message = "Informe um email válido")
+	@Size(max = 60)
 	private String email;
+
+	private Date posted;
 
 	public long getId() {
 		return id;
@@ -54,6 +62,14 @@ public class Comment {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public void setPosted(Date posted) {
+		this.posted = posted;
+	}
+
+	public Date getPosDate() {
+		return posted;
 	}
 
 	@Override

@@ -10,10 +10,17 @@
 <decorator:head />
 </head>
 <body>
-	<decorator:body />
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/javascripts/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/javascripts/application.js"></script>
+	<div id="header">
+	</div>
+	<div id="content">
+		<decorator:body />
+	</div>
+	<div id="footer">
+	<small>Aplicação desenvolvida por Plínio Balduino para a <a href="http://site.bluesoft.com.br/" target="_blank">Bluesoft</a></small>
+	</div>
 </body>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/javascripts/jquery.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/javascripts/application.js"></script>
 </html>
