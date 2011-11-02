@@ -1,10 +1,11 @@
-#Tue Nov 01 23:24:36 BRST 2011
+#Wed Nov 02 20:07:47 BRST 2011
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/comment=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/comment/content.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/comment/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/comment/save.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/jsp/decorators/main.jsp=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/resources=UTF-8

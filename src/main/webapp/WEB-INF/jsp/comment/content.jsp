@@ -1,4 +1,4 @@
-<form method='post' action='/save'>
+<form method='post' action='/list'>
 	<label for='subject'>Assunto: </label>${subject}<input type='hidden'
 		id='subject' name='comment.subject' value='${subject}'><br />
 	<label for='email'>Email: </label><input type='email' id='email'

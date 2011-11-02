@@ -68,7 +68,7 @@ public class Comment {
 		this.posted = posted;
 	}
 
-	public Date getPosDate() {
+	public Date getPosted() {
 		return posted;
 	}
 

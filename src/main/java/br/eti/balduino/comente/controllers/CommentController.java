@@ -37,10 +37,7 @@ public class CommentController {
 
 	@Post("/list")
 	public List<Comment> save(Comment comment) {
-		System.out.println("..........saving");
 		dao.save(comment);
-		System.out.println("..........saved");
-
-		return dao.listAll();
+		return dao.findBySubject(comment.getSubject());
 	}
 }
