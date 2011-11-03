@@ -74,8 +74,11 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return getId() + " - " + getEmail() + " - " + getSubject() + " - "
-				+ getContent();
+		return getId() + " - " + 
+				getEmail() + " - " + 
+				getSubject() + " - " + 
+				getContent() + " - " + 
+				getPosted();
 	}
 
 	@Override
